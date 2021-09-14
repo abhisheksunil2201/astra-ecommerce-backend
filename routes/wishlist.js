@@ -4,8 +4,8 @@ const {
   getWishlistItems,
   addItemToWishlist,
   deleteItemFromWishlist,
-} = require("../Controllers/wishlist");
-const { getWishlistById, isAuthorized } = require("../Controllers/param");
+} = require("../controllers/wishlist");
+const { getWishlistById, isAuthorized } = require("../controllers/param");
 const router = express.Router();
 
 router.get("/", isAuthorized, getWishlistById, getWishlistItems);
