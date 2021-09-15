@@ -42,7 +42,7 @@ const updateQuantityOfCartItems = async (req, res) => {
   cart.cartItems = extend(cart.cartItems, { updateCartItem });
   try {
     await cart.save();
-    await cart.populate("cartItems.product").execPopulate();
+    await cart.populate("cartItems.product");
     res.json({ response: cart.cartItems });
   } catch (err) {
     res.json({ success: false, response: err.message });
